@@ -19,7 +19,7 @@ To start your own environment from this one, fork this repository and point the 
 | Personal rules | `skills/rules-*` | Coding rules per language (`coding`, `java`, `python`, `javascript-typescript`, `cpp`, `shell`, `docker`); `AGENTS.md` tells Codex to load them before editing code |
 | Skills | `skills/<name>` | Frameworks, architecture, protocols, platforms and UX guidance, loaded when the task matches |
 | Commands | `skills/<prefix>_<name>` with `agents/openai.yaml` | Run only when invoked, e.g. `$git_commit`, `$project_scan --full` |
-| git-guard | `hooks/git-guard`, `rules/git-guard.rules` | Adds the git rules on the first git command of a session; destructive git commands are blocked until the user confirms, then Codex asks for approval |
+| git-guard | `hooks/git-guard`, `rules/git-guard.rules` | Adds the git rules on the first git command of a session; destructive git commands, and new branches or commits that break Git Flow or Conventional Commits in repos that follow them, are blocked until the user confirms, then Codex asks for approval |
 | protect-files | `hooks/protect-files` | Blocks edits to dependency lock files and environment files |
 | Permission profile | `settings.json` → `permissions.mk96`, `default_permissions` | Like the built-in `:workspace` profile, plus environment files (`.env`, `.env.local`...) that sandboxed commands cannot read |
 | Plugins | `plugins.json` | superpowers, context7 and mk96-env, with their Git marketplaces |
