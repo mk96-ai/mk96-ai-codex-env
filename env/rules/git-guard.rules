@@ -1,0 +1,17 @@
+# git-guard: destructive git commands confirmed in chat still need the user's approval.
+# The git-guard hook (~/.codex/hooks/git-guard) blocks destructive git commands and asks the
+# model to rerun them, once the user confirms, as `git -c mk96.confirmed <args>`. This rule
+# makes Codex show its approval prompt for that form, so the user approves every one.
+prefix_rule(
+    pattern = ["git", "-c", "mk96.confirmed"],
+    decision = "prompt",
+    justification = "git-guard: this git command can lose work or rewrite history.",
+    match = [
+        "git -c mk96.confirmed push --force origin main",
+        "git -c mk96.confirmed reset --hard HEAD~1",
+    ],
+    not_match = [
+        "git push origin main",
+        "git -c core.pager=cat log",
+    ],
+)

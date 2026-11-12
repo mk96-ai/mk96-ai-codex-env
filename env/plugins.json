@@ -1,0 +1,28 @@
+{
+  "format": 1,
+  "marketplaces": {
+    "context7-marketplace": {
+      "source": "https://github.com/upstash/context7.git",
+      "source_type": "git"
+    },
+    "mk96-ai-codex-env-plugin": {
+      "source": "https://github.com/mk96-ai/mk96-ai-codex-env-plugin.git",
+      "source_type": "git"
+    },
+    "superpowers-dev": {
+      "source": "https://github.com/obra/superpowers.git",
+      "source_type": "git"
+    }
+  },
+  "plugins": {
+    "context7@context7-marketplace": {
+      "enabled": true
+    },
+    "mk96-env@mk96-ai-codex-env-plugin": {
+      "enabled": true
+    },
+    "superpowers@superpowers-dev": {
+      "enabled": true
+    }
+  }
+}
